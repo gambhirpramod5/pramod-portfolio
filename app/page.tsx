@@ -162,3 +162,4 @@ const CERTS = [
   'SAP Business Analyst — Coursera (Verified)',
   'Generative AI for Marketing, Sales & Campaigns — Coursera (Verified)',
 ]
+ 
