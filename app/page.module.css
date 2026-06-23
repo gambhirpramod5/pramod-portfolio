@@ -1,53 +1,59 @@
-.main {
-  min-height: 200vh;
-  background: var(--void);
+.main { background: var(--void); min-height: 200vh; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 clamp(1.5rem, 6vw, 5rem); }
+.eyebrow { display: block; font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--amber); opacity: 0.8; margin-bottom: 1.8rem; }
+.sectionTitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 300; line-height: 1.12; color: var(--cream); margin-bottom: 1.8rem; }
+.sectionTitle em { font-style: italic; color: var(--amber); }
+.body { font-size: clamp(0.88rem, 1.3vw, 1rem); font-weight: 300; line-height: 1.85; color: rgba(255,248,240,0.5); max-width: 580px; }
+.about { padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 6vw, 7rem); border-top: 1px solid rgba(255,248,240,0.05); }
+.aboutInner { max-width: 680px; }
+.contactRow { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem 1rem; margin-top: 2.4rem; }
+.contactLink { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.04em; color: rgba(255,248,240,0.45); text-decoration: none; transition: color 0.2s ease; }
+.contactLink:hover { color: var(--amber); }
+.contactDot { display: block; width: 3px; height: 3px; border-radius: 50%; background: rgba(255,248,240,0.2); }
+.skills { padding: clamp(5rem, 10vh, 8rem) 0; border-top: 1px solid rgba(255,248,240,0.05); }
+.skillsGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5px; background: rgba(255,248,240,0.05); border: 1px solid rgba(255,248,240,0.05); border-radius: 2px; overflow: hidden; }
+.skillCard { padding: 2rem 1.8rem; background: var(--void); transition: background 0.25s ease; }
+.skillCard:hover { background: rgba(245,158,11,0.04); }
+.skillTitle { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.2rem; }
+.skillList { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.skillItem { font-size: 0.85rem; font-weight: 300; color: rgba(255,248,240,0.55); line-height: 1.4; }
+.experience { padding: clamp(5rem, 10vh, 8rem) 0; border-top: 1px solid rgba(255,248,240,0.05); }
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.timelineItem { display: grid; grid-template-columns: 180px 1fr; gap: 3rem; padding: 3rem 0; border-bottom: 1px solid rgba(255,248,240,0.05); }
+.timelineItem:last-child { border-bottom: none; }
+.timelineMeta { display: flex; flex-direction: column; gap: 0.4rem; padding-top: 0.15rem; }
+.timelinePeriod { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; color: var(--amber); opacity: 0.8; white-space: nowrap; }
+.timelineLocation { font-size: 0.68rem; font-weight: 300; color: rgba(255,248,240,0.3); line-height: 1.4; }
+.timelineContent { display: flex; flex-direction: column; }
+.timelineRole { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 300; color: var(--cream); line-height: 1.2; margin-bottom: 0.35rem; }
+.timelineCompany { display: block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,248,240,0.35); margin-bottom: 1.4rem; }
+.timelinePoints { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.timelinePoint { font-size: 0.88rem; font-weight: 300; line-height: 1.7; color: rgba(255,248,240,0.48); padding-left: 1rem; position: relative; }
+.timelinePoint::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 4px; height: 1px; background: var(--amber); opacity: 0.5; }
+.eduSection { padding: clamp(5rem, 10vh, 8rem) 0; border-top: 1px solid rgba(255,248,240,0.05); }
+.eduGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.eduItem { display: flex; flex-direction: column; gap: 0.2rem; padding: 1.4rem 0; border-bottom: 1px solid rgba(255,248,240,0.05); }
+.eduItem:last-child { border-bottom: none; }
+.eduYear { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; color: var(--amber); opacity: 0.7; }
+.eduDegree { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: var(--cream); margin-top: 0.2rem; }
+.eduSchool { font-size: 0.78rem; font-weight: 300; color: rgba(255,248,240,0.38); }
+.certItem { display: flex; align-items: flex-start; gap: 0.8rem; padding: 1.1rem 0; border-bottom: 1px solid rgba(255,248,240,0.05); }
+.certBadge { font-size: 0.7rem; color: var(--amber); margin-top: 0.1rem; flex-shrink: 0; }
+.certName { font-size: 0.85rem; font-weight: 300; line-height: 1.5; color: rgba(255,248,240,0.5); }
+.locationCard { margin-top: 0.5rem; }
+.locationText { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--cream); margin-bottom: 0.3rem; }
+.locationSub { font-size: 0.78rem; font-weight: 300; color: rgba(255,248,240,0.35); }
+.footer { padding: 3rem clamp(1.5rem, 6vw, 5rem); border-top: 1px solid rgba(255,248,240,0.05); text-align: center; }
+.footerText { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: rgba(255,248,240,0.2); }
+@media (max-width: 768px) {
+  .timelineItem { grid-template-columns: 1fr; gap: 0.8rem; padding: 2.5rem 0; }
+  .timelineMeta { flex-direction: row; align-items: center; gap: 1rem; }
+  .eduGrid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .skillsGrid { grid-template-columns: 1fr 1fr; }
 }
-
-.work {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8rem 2rem;
-  background: linear-gradient(180deg, var(--void) 0%, #0a0a0f 100%);
-}
-
-.workInner {
-  max-width: 680px;
-  text-align: center;
-}
-
-.eyebrow {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 1.5rem;
-  opacity: 0.8;
-}
-
-.workTitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 300;
-  line-height: 1.1;
-  color: var(--cream);
-  margin-bottom: 2rem;
-}
-
-.workTitle em {
-  font-style: italic;
-  color: var(--amber);
-}
-
-.workBody {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(255, 248, 240, 0.5);
-  max-width: 480px;
-  margin: 0 auto;
+@media (max-width: 480px) {
+  .about { padding: 4rem 1.5rem; }
+  .skillsGrid { grid-template-columns: 1fr; }
+  .contactRow { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .contactDot { display: none; }
 }
